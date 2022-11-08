@@ -12,6 +12,6 @@ function searchName (char, limit, callback) {
 
 function showResult (result) {
     console.log(result);
-}
+};
 
 searchName('an', 3, showResult);
