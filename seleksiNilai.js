@@ -1,4 +1,4 @@
-const dataNilai = [20, 40, 35, 30, 45, 100];
+const dataNilai = [10, 20, 40, 35, 30, 45, 100];
 const nilaiAwal = 10;
 const nilaiAkhir = 120;
 
@@ -18,7 +18,7 @@ const seleksiNilai = (nilaiAwal, nilaiAkhir, dataNilai) => {
         console.log('Nilai akhir harus lebih besar dari nilai awal')
     } else if (dataNilai.length < 5) {
         console.log('Jumlah angka dalam dataNilai harus lebih dari 5')
-    } else if (nilaiFilter.toString() == "") {
+    } else if (nilaiFilter.toString() === "") {
         console.log('Nilai tidak ditemukan');
     } else {
         console.log(nilaiFilter.sort(compare));
