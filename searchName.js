@@ -6,8 +6,8 @@ function searchName (char, limit, callback) {
     const dataName = names.map(name => name.toLowerCase());
     const filterName = dataName.filter(name => name.includes(char.toLowerCase())).sort().slice(0, limit);
     const resultSearch = filterName.map(name => name.charAt(0).toUpperCase() + name.slice(1));
-
-    callback(resultSearch)
+    
+    callback(resultSearch);
 };
 
 function showResult (result) {
