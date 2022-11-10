@@ -14,13 +14,13 @@ let data = {
     website: 'hildegard.org'
 }
 
-// Mengubah data dengan spread operator
+// Mengubah data dengan spread operator.
 data = {...data, name: 'Mugi Mustakim', email: 'mustakimmugi@gmail.com', hobby: 'Futsal'};
 
-console.log(data);
+console.log(data); // Expected output: menampilkan isi variabel data dengan properti name dan email yang sudah diubah value nya, dan menambahkan properti baru yaitu hobby.
 
-// Mengambil data dengan destructuring
+// Mengambil data dengan destructuring objek.
 const {address: {street, city}} = data;
 
-console.log(street);
-console.log(city);
+console.log(street); // Expected output: Kulas Light
+console.log(city); // Expected output: Gwenborough

@@ -1,17 +1,20 @@
 const names = ['Abigail', 'Alexandra', 'Alison', 'Amanda', 'Angela', 'Bella', 'Carol', 'Caroline', 'Carolyn', 'Deirdre', 'Diana', 'Elizabeth', 'Ella', 'Faith', 'Olivia', 'Penelope'];
-// const char = 'an';
-// const limit = 3;
 
+// Membuat fungsi untuk mencari nama yang memiliki karakter tertentu.
 function searchName (char, limit, callback) {
-    const dataName = names.map(name => name.toLowerCase());
-    const filterName = dataName.filter(name => name.includes(char.toLowerCase())).sort().slice(0, limit);
-    const resultSearch = filterName.map(name => name.charAt(0).toUpperCase() + name.slice(1));
+    // Memfilter elemen-elemen yang bernilai true saja, sehingga filter memerlukan fungsi yang mengembalikan nilai boolean dari includes. Semua elemen array dan parameter char dijadikan huruf kecil terlebih dahulu agar tidak sensitive, lalu outputnya dibatasi sesuai limit.
+    const filteredName = names.filter(name =>  
+        name.toLowerCase()
+        .includes(char.toLowerCase()))
+        .sort()
+        .slice(0, limit);
     
-    callback(resultSearch);
+    callback(filteredName);
 };
-
+// Membuat fungsi untuk menampilkan ke console.
 function showResult (result) {
     console.log(result);
 };
-
-searchName('an', 3, showResult);
+// Memanggil fungsi.
+searchName('an', 3, showResult); // Expected output: [ 'Alexandra', 'Amanda', 'Angela' ]
+searchName('AN', 4, showResult); // Expected output: [ 'Alexandra', 'Amanda', 'Angela', 'Diana']
